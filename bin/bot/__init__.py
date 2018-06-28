@@ -1,0 +1,1 @@
+BOT_API_TOKEN: str = '602304011:AAGjPbIPaFI-A7glmMjJuQBkJG-njvssIc0'
