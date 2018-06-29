@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Callable
 
 from bin.ex_rate.rate import ToUahRate
+from bin.types import EmptyDictOf
 
 
 class Currency(ABC):
@@ -30,7 +31,7 @@ class ForeignCurrency(Currency):
     def __init__(self, currency: str) -> None:
 
         def _currency_data(value: str) -> str:
-            return ToUahRate(currency.lstrip('/')).currency_records().get(value)
+            return EmptyDictOf(ToUahRate(currency.lstrip('/')).currency_records()).get(value)
 
         self._currency_data: Callable[[str], str] = _currency_data
 

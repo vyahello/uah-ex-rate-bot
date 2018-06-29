@@ -37,15 +37,16 @@ class BotMessage(Message):
         self._req: Request = SafeBotRequest(CommonUrl('https://api.telegram.org/bot', BOT_API_TOKEN, '/sendMessage'))
 
     def send(self) -> Response:
-        return self._req.post({'chat_id': self._chat_id,
-                               'text': f"1 {self._currency.cc()} costs {self._currency.rate()} UAH"})
+        if self._currency.rate():
+            return self._req.post({'chat_id': self._chat_id,
+                                   'text': f"1 {self._currency.cc()} costs {self._currency.rate()} UAH"})
+        return None
 
 
 class BotAnswer(Answer):
     """An answer from a bot."""
 
     def __init__(self, request: requests.Request) -> None:
-
         def _req() -> Dict[Any, Any]:
             return request.dct().get('message')
 

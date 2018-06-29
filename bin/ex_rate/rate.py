@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Dict
 from bin.web_api.requests import Request, SafeBotRequest
+from bin.web_api.responses import EmptyCurrencyResponse
 from bin.web_api.urls import CommonUrl
 
 
@@ -12,6 +13,19 @@ class ExchangeRate(ABC):
         pass
 
 
+class EmptyRateOf(ExchangeRate):
+    """Represent empty exchange rate."""
+
+    def __init__(self, rate: ExchangeRate) -> None:
+        self._rate: ExchangeRate = rate
+
+    def currency_records(self) -> Dict[str, str]:
+        try:
+            return self._rate.currency_records()
+        except IndexError:
+            pass
+
+
 class ToUahRate(ExchangeRate):
     """To `uah` exchange rate."""
 
@@ -20,4 +34,4 @@ class ToUahRate(ExchangeRate):
             CommonUrl('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=', currency, '&json'))
 
     def currency_records(self) -> Dict[str, str]:
-        return self._req.get().json()[0]
+        return EmptyCurrencyResponse(self._req.get()).json()
