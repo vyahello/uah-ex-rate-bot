@@ -30,7 +30,7 @@ class ForeignCurrency(Currency):
     def __init__(self, currency: str) -> None:
 
         def _currency_data(value: str) -> str:
-            return ToUahRate(currency).currency_records().get(value)
+            return ToUahRate(currency.lstrip('/')).currency_records().get(value)
 
         self._currency_data: Callable[[str], str] = _currency_data
 

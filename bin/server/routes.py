@@ -15,7 +15,7 @@ def index():
         text: Text = InputText(answer.message())
 
         if text.match():
-            currency: Currency = ForeignCurrency(text.get_coin())
+            currency: Currency = ForeignCurrency(text.get_currency())
             BotMessage(answer.chat_id(), currency).send()
 
     return WELCOME_MESSAGE
