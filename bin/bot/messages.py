@@ -38,7 +38,7 @@ class BotMessage(Message):
 
     def send(self) -> Response:
         return self._req.post({'chat_id': self._chat_id,
-                               'text': f"{self._currency.cc()} costs {self._currency.rate()} UAH"})
+                               'text': f"1 {self._currency.cc()} costs {self._currency.rate()} UAH"})
 
 
 class BotAnswer(Answer):

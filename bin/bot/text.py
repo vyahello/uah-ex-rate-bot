@@ -10,19 +10,19 @@ class Text(ABC):
         pass
 
     @abstractmethod
-    def get_coin(self) -> str:
+    def get_currency(self) -> str:
         pass
 
 
 class InputText(Text):
     """Parse input message."""
 
-    def __init__(self, text: str, pattern: str = r'/\w+') -> None:
+    def __init__(self, text: str, pattern: str = r'\w+') -> None:
         self._pattern: str = pattern
         self._text: str = text
 
     def match(self) -> bool:
         return search(self._pattern, self._text)
 
-    def get_coin(self) -> str:
+    def get_currency(self) -> str:
         return self.match().group()
