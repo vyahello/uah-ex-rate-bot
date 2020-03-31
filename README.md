@@ -1,16 +1,19 @@
 # UAH exchange rate telegram bot
-Basic telegram bot powered by a webhook that helps you get latest UAH exchange rate comparing to other currencies.
+> Basic telegram bot powered by a webhook that helps you get latest UAH exchange rate comparing to other currencies.
+> 
+> Bot is called `UahExRateBot` that served by [pythonanywhere.com](https://pythonanywhere.com) hosting, search for it in the telegram to allow it help you to get your desired exchange rate. Enjoy it!
 
-Bot is called `UahExRateBot` that served by [pythonanywhere.com](https://pythonanywhere.com) hosting, search for it in the telegram to allow it help you to get your desired exchange rate. Enjoy it!
+![Screenshot](bin/demo/bot.png)
 
-## Run a uah currency rate bot
+## Tools:
+- python 3.6+
+- [flask](https://flask.palletsprojects.com)
+
+## Usage
 Run script from the root directory of the project:
 ```bash
-~ python rxbot.py
+~ python bot.py
 ```
-
-## Demo
-![Screenshot](bin/demo/bot.png)
 
 ## Contributing
 - clone the repository
