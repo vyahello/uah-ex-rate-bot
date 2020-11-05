@@ -20,4 +20,4 @@ class EmptyDictOf(EmptyDict):
         try:
             return self._dct.get(value)
         except AttributeError:
-            return ''
+            return ""

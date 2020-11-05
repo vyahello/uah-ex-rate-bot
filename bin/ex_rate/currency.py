@@ -29,20 +29,21 @@ class ForeignCurrency(Currency):
     """Concrete currency."""
 
     def __init__(self, currency: str) -> None:
-
         def _currency_data(value: str) -> str:
-            return EmptyDictOf(ToUahRate(currency.lstrip('/')).currency_records()).get(value)
+            return EmptyDictOf(
+                ToUahRate(currency.lstrip("/")).currency_records()
+            ).get(value)
 
         self._currency_data: Callable[[str], str] = _currency_data
 
     def txt(self) -> str:
-        return self._currency_data('txt')
+        return self._currency_data("txt")
 
     def rate(self) -> str:
-        return self._currency_data('rate')
+        return self._currency_data("rate")
 
     def cc(self) -> str:
-        return self._currency_data('cc')
+        return self._currency_data("cc")
 
     def exchange_date(self) -> str:
-        return self._currency_data('exchangedate')
+        return self._currency_data("exchangedate")

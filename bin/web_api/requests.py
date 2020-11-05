@@ -36,11 +36,12 @@ class SafeBotRequest(Request):
     """
 
     def __init__(self, url: Url, success: int = 200) -> None:
-
         def _safe(res: Response) -> Response:
             code: int = res.status_code()
             if code is not success:
-                raise ResponseError(f'HTTP response error with {code} status code!!!')
+                raise ResponseError(
+                    f"HTTP response error with {code} status code!!!"
+                )
             return res
 
         self._session: Session = BotSession(url)

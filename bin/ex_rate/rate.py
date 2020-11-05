@@ -31,7 +31,12 @@ class ToUahRate(ExchangeRate):
 
     def __init__(self, currency: str) -> None:
         self._req: Request = SafeBotRequest(
-            CommonUrl('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=', currency, '&json'))
+            CommonUrl(
+                "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=",
+                currency,
+                "&json",
+            )
+        )
 
     def currency_records(self) -> Dict[str, str]:
         return EmptyCurrencyResponse(self._req.get()).json()

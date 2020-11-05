@@ -11,7 +11,13 @@ class Server(ABC):
         pass
 
     @abstractmethod
-    def run(self, host: str = None, port: int = None, debug: Any = None, **options: Any) -> None:
+    def run(
+        self,
+        host: str = None,
+        port: int = None,
+        debug: Any = None,
+        **options: Any,
+    ) -> None:
         pass
 
 
@@ -24,5 +30,11 @@ class WebServer(Server):
     def route(self, path: str, methods: Iterable[str]) -> Callable[..., Any]:
         return self._app.route(path, methods=methods)
 
-    def run(self, host: str = None, port: int = None, debug: Any = None, **options: Any) -> None:
+    def run(
+        self,
+        host: str = None,
+        port: int = None,
+        debug: Any = None,
+        **options: Any,
+    ) -> None:
         return self._app.run(host, port, debug, **options)

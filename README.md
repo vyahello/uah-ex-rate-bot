@@ -1,4 +1,5 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE.md)
 
 # UAH rate telegram bot
@@ -7,8 +8,13 @@
 > Bot is called `UahExRateBot` that served by [pythonanywhere.com](https://pythonanywhere.com) hosting, search for it in the telegram app.
 
 ## Tools:
+
+### Production
 - python 3.6+
 - [flask](https://flask.palletsprojects.com) web framework
+
+### Development
+- [black](https://black.readthedocs.io/en/stable/) code formatter
 
 ## Usage
 ![Screenshot](howto.png)

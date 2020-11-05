@@ -1,12 +1,20 @@
 from bin.bot.messages import Answer, BotAnswer, BotMessage
 from bin.bot.text import Text, InputText
 from bin.ex_rate.currency import ForeignCurrency, Currency
-from bin.server import SERVER, METHODS, Request, ServerRequest, POST, WELCOME_MESSAGE, Server
+from bin.server import (
+    SERVER,
+    METHODS,
+    Request,
+    ServerRequest,
+    POST,
+    WELCOME_MESSAGE,
+    Server,
+)
 
 _server: Server = SERVER
 
 
-@_server.route('/', methods=METHODS)
+@_server.route("/", methods=METHODS)
 def index():
     request: Request = ServerRequest()
     answer: Answer = BotAnswer(request)

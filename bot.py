@@ -5,5 +5,5 @@ def run(bot: Server) -> None:
     bot.run()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     run(bot=SERVER)
