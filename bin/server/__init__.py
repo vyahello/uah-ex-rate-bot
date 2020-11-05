@@ -5,6 +5,6 @@ from bin.server.requests import Request, ServerRequest
 SERVER: Server = WebServer()
 WELCOME_MESSAGE: str = '<h1>UAH rate bot server powered by flask micro-web framework. Core is written by V.Yahello</h1>'
 METHODS: Tuple[str, ...] = ('POST', 'GET')
-POST = 'POST'
+POST: str = 'POST'
 
 from . import routes

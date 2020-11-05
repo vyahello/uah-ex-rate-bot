@@ -1,6 +1,9 @@
-from bin.server import SERVER as bot
+from bin.server import SERVER, Server
+
+
+def run(bot: Server) -> None:
+    bot.run()
 
 
 if __name__ == '__main__':
-    bot.run()
-
+    run(bot=SERVER)
