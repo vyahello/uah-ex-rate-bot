@@ -1,5 +1,6 @@
-werkzeug
-requests
-pytest
+black
 flask
 flask_sslify
+pytest
+requests
+werkzeug
